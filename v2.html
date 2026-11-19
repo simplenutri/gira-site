@@ -198,7 +198,12 @@ p{margin:0}
 .dot-f{width:100%;max-width:132px;aspect-ratio:1;border-radius:50%;background:var(--c);position:relative;overflow:hidden;box-shadow:inset 0 -10px 22px rgba(0,0,0,.14)}
 .dot-f img{width:100%;height:100%;object-fit:cover;object-position:30% 50%;transform:scale(2.2)}
 .dot-f.soon{opacity:.92}
-.dot-f img.round{object-fit:contain;transform:none;background:#4A2A1C}
+.dot-f img.round{object-fit:cover;transform:scale(1.08)}
+.dot-f.soon img.round{filter:saturate(.9)}
+.lineup li{cursor:pointer}
+.lineup li:focus-visible{outline:none}
+.lineup li:focus-visible .dot-f,.lineup li.sel .dot-f{box-shadow:0 0 0 4px var(--card),0 0 0 6px var(--flavor)}
+.lineup .hint-f{display:block;margin-top:18px;font-size:.82rem;color:var(--muted)}
 .dot-f.soon::after{content:"";position:absolute;inset:8px;border-radius:50%;border:1.5px dashed rgba(255,255,255,.7)}
 .lineup b{font-family:var(--serif);font-weight:400;font-size:1.05rem;line-height:1.2}
 .lineup span{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
@@ -646,13 +651,14 @@ footer{background:var(--band);color:var(--band-fg);padding-block:0 40px;position
       <div class="lineup">
         <p class="lineup-t">Os sabores da GIRA</p>
         <ul>
-          <li class="now"><span class="dot-f"><img class="round" src="textura-redonda.webp" alt=""></span><b>Brownie de Cacau</b><span>Disponível</span></li>
-          <li><span class="dot-f soon" style="--c:#A87A66"></span><b>Chocolatíssimo</b><span>Em estudo</span></li>
-          <li><span class="dot-f soon" style="--c:#D19189"></span><b>Morango</b><span>Em estudo</span></li>
-          <li><span class="dot-f soon" style="--c:#B4936F"></span><b>Mocha</b><span>Em estudo</span></li>
-          <li><span class="dot-f soon" style="--c:#D9A15A"></span><b>Caramelo com sal</b><span>Em estudo</span></li>
-          <li><span class="dot-f soon" style="--c:#D8C6AE"></span><b>Cookie Dough</b><span>Em estudo</span></li>
+          <li class="now"><span class="dot-f" style="--c:#5A3424"><img class="round" src="sabor-brownie.webp" data-big="textura-redonda.webp" alt="Textura do sabor Brownie de Cacau"></span><b>Brownie de Cacau</b><span>Disponível</span></li>
+          <li><span class="dot-f soon" style="--c:#A87A66"><img class="round" src="sabor-chocolatissimo.webp" data-big="sabor-chocolatissimo-g.webp" alt="Textura do sabor Chocolatíssimo" loading="lazy"></span><b>Chocolatíssimo</b><span>Em estudo</span></li>
+          <li><span class="dot-f soon" style="--c:#D19189"><img class="round" src="sabor-morango.webp" data-big="sabor-morango-g.webp" alt="Textura do sabor Morango" loading="lazy"></span><b>Morango</b><span>Em estudo</span></li>
+          <li><span class="dot-f soon" style="--c:#B4936F"><img class="round" src="sabor-mocha.webp" data-big="sabor-mocha-g.webp" alt="Textura do sabor Mocha" loading="lazy"></span><b>Mocha</b><span>Em estudo</span></li>
+          <li><span class="dot-f soon" style="--c:#D9A15A"><img class="round" src="sabor-caramelo-sal.webp" data-big="sabor-caramelo-sal-g.webp" alt="Textura do sabor Caramelo com sal" loading="lazy"></span><b>Caramelo com sal</b><span>Em estudo</span></li>
+          <li><span class="dot-f soon" style="--c:#D8C6AE"><img class="round" src="sabor-cookie-dough.webp" data-big="sabor-cookie-dough-g.webp" alt="Textura do sabor Cookie Dough" loading="lazy"></span><b>Cookie Dough</b><span>Em estudo</span></li>
         </ul>
+        <span class="hint-f">Toque num sabor para ver a textura de perto.</span>
       </div>
     </div>
   </section>
@@ -1169,6 +1175,15 @@ footer{background:var(--band);color:var(--band-fg);padding-block:0 40px;position
   }
   const brownie=drawBrownie();
   $$('img[data-brownie]').forEach(i=>{if(brownie)i.src=brownie;else i.remove()});
+
+  /* ---------- Roda de sabores: tocar num sabor mostra a textura no círculo grande ---------- */
+  const bigImg=$('.bite-circle img');
+  $$('.lineup li').forEach(li=>{
+    const img=li.querySelector('img.round');if(!img||!bigImg)return;
+    li.tabIndex=0;li.setAttribute('role','button');li.setAttribute('aria-label','Ver a textura do sabor '+li.querySelector('b').textContent);
+    const pick=()=>{bigImg.src=img.dataset.big||img.src;bigImg.alt=img.alt;$$('.lineup li').forEach(x=>x.classList.toggle('sel',x===li));$('#sabores').scrollIntoView({behavior:reduce?'instant':'smooth'})};
+    li.onclick=pick;li.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick()}};
+  });
 
   /* ---------- Avisos do protótipo ---------- */
   $$('[data-toast]').forEach(b=>b.onclick=()=>toast(b.dataset.toast));
