@@ -206,7 +206,8 @@ p{margin:0}
 .half.r{clip-path:polygon(50% 0,100% 0,100% 100%,49.5% 100%,50.6% 94%,48.9% 86%,51.3% 76%,48.7% 66%,51.1% 57%,48.5% 47%,51.4% 37%,48.8% 27%,51.2% 18%,48.6% 9%)}
 .flavors.opened .half.l{transform:translate(-46%,8%) rotate(-14deg);opacity:0}
 .flavors.opened .half.r{transform:translate(46%,-6%) rotate(11deg);opacity:0}
-.flavors.opened .brownie{transform:scale(1)}
+.bite-round{position:absolute;inset:9%;width:82%;height:82%;object-fit:contain;filter:drop-shadow(0 22px 24px rgba(8,30,36,.35));opacity:0;transform:scale(.86) rotate(-8deg);transition:opacity .6s ease .25s,transform .9s cubic-bezier(.2,.8,.2,1)}
+.flavors.opened .bite-round{opacity:1;transform:none}
 .tap{display:inline-flex;align-items:center;gap:10px;font-size:.84rem;font-weight:500;color:var(--brand);border:1.5px solid var(--brand);border-radius:999px;padding:8px 16px;background:var(--surface);cursor:pointer}
 .tap::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lima);box-shadow:0 0 0 3px rgba(174,211,91,.35)}
 .bite-copy{display:flex;flex-direction:column;align-items:flex-start;gap:22px}
@@ -227,6 +228,7 @@ p{margin:0}
 .lineup li:nth-child(2),.lineup li:nth-child(5){--y:10px}
 .dot-f{width:100%;max-width:132px;aspect-ratio:1;border-radius:50%;background:var(--c);position:relative;overflow:hidden;box-shadow:inset 0 -10px 22px rgba(0,0,0,.14)}
 .dot-f img{width:100%;height:100%;object-fit:cover;object-position:30% 50%;transform:scale(2.2)}
+.dot-f img.round{object-fit:contain;transform:none;background:#4A2A1C}
 .dot-f.soon::after{content:"";position:absolute;inset:8px;border-radius:50%;border:1.5px dashed rgba(255,255,255,.7)}
 .now .dot-f{box-shadow:0 0 0 4px var(--card),0 0 0 6px var(--brand)}
 .lineup b{font-family:var(--serif);font-weight:400;font-size:1.05rem;line-height:1.2}
@@ -688,8 +690,8 @@ footer{background:var(--band);color:var(--band-fg);padding-block:0 40px;position
       <div class="bite2">
         <div class="bite-stage">
           <div class="bite-disc">
+            <img class="bite-round" src="textura-redonda.webp" alt="Textura do Brownie de Cacau vista de cima">
             <button class="stage-btn" type="button" id="biteBtn" aria-pressed="false" aria-label="Abrir a embalagem">
-              <img class="brownie" data-brownie alt="">
               <img class="half l" src="bar-teal.webp" alt="">
               <img class="half r" src="bar-teal.webp" alt="">
             </button>
@@ -710,7 +712,7 @@ footer{background:var(--band);color:var(--band-fg);padding-block:0 40px;position
       <div class="lineup">
         <p class="lineup-t">Uma barra hoje. Uma roda de sabores amanhã.</p>
         <ul>
-          <li class="now"><span class="dot-f"><img data-brownie alt=""></span><b>Brownie de Cacau</b><span>Disponível</span></li>
+          <li class="now"><span class="dot-f"><img class="round" src="textura-redonda.webp" alt=""></span><b>Brownie de Cacau</b><span>Disponível</span></li>
           <li><span class="dot-f soon" style="--c:#A87A66"></span><b>Chocolatíssimo</b><span>Em estudo</span></li>
           <li><span class="dot-f soon" style="--c:#D19189"></span><b>Morango</b><span>Em estudo</span></li>
           <li><span class="dot-f soon" style="--c:#B4936F"></span><b>Mocha</b><span>Em estudo</span></li>
