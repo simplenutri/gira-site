@@ -158,8 +158,8 @@ p{margin:0}
 .nums b sup{font-family:var(--sans);font-size:.3em;vertical-align:top;position:relative;top:.35em;margin-left:.1em}
 .nums span{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
 .nums p{color:var(--muted);font-size:.94rem;max-width:24ch}
-.texture{position:relative;aspect-ratio:3/4;border-radius:999px 999px 28px 28px;overflow:hidden;background:#3A2016;box-shadow:var(--shadow)}
-.texture img{width:100%;height:100%;object-fit:cover;object-position:18% 45%;transform:scale(1.9);transform-origin:22% 45%}
+.texture{position:relative;width:100%;max-width:340px;justify-self:center}
+.texture img{display:block;width:100%;height:auto;aspect-ratio:720/1286;filter:drop-shadow(0 26px 26px rgba(42,22,14,.28))}
 .inside-r{display:flex;flex-direction:column;gap:18px}
 .inside-r h3{font-family:var(--serif);font-size:1.6rem}
 .inside-r > p{color:var(--muted)}
@@ -175,7 +175,7 @@ p{margin:0}
 @media (max-width:640px){
   .inside .wrap{grid-template-columns:1fr}
   .texture,.inside-l,.inside-r{grid-column:1;grid-row:auto}
-  .texture{aspect-ratio:4/3;border-radius:999px 999px 24px 24px;max-width:420px;width:100%;margin:0 auto}
+  .texture{max-width:240px;margin:0 auto}
 }
 
 /* 3. A mordida + sabores (blocos mesclados) */
@@ -617,7 +617,7 @@ footer{background:var(--band);color:var(--band-fg);padding-block:0 40px;position
         </div>
       </div>
       <!-- Ilustração provisória de textura: trocar por foto em close (crop) da barra partida -->
-      <figure class="texture" style="margin:0"><img data-brownie alt="Close da textura do Brownie de Cacau, ilustração provisória"></figure>
+      <figure class="texture" style="margin:0"><img src="barra-textura.webp" alt="Barra GIRA Brownie de Cacau vista de cima, mostrando a textura" width="720" height="1286"></figure>
       <div class="inside-r">
         <h3>Ingredientes reais.</h3>
         <p>Poucos, que você reconhece. A lista completa sai com a formulação final.</p>
@@ -1173,7 +1173,7 @@ footer{background:var(--band);color:var(--band-fg);padding-block:0 40px;position
     cx.restore();
     return cv.toDataURL('image/png');
   }
-  const brownie=drawBrownie();
+  const brownie=null; // a ilustração foi substituída por fotos reais
   $$('img[data-brownie]').forEach(i=>{if(brownie)i.src=brownie;else i.remove()});
 
   /* ---------- Roda de sabores: tocar num sabor mostra a textura no círculo grande ---------- */
