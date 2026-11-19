@@ -1,0 +1,1059 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GIRA · Gostoso por inteiro</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Jost:wght@400;500;600&display=swap">
+<style>
+/* Layout: off-white "papel de embalagem" com grão; o azul-petróleo entra em faixas inteiras (como o display de gôndola); arcos do display emolduram produto; o círculo que gira é a assinatura */
+:root{
+  --petrol:#185B64;
+  --paper:#F2EFE8;
+  --cacau:#725044;
+  --lima:#AED35B;
+  --bg:#F2EFE8;
+  --surface:#FAF8F3;
+  --card:#E8E3D7;
+  --fg:#15292B;
+  --muted:#56696A;
+  --line:rgba(24,91,100,.18);
+  --brand:#185B64;
+  --brand-ink:#F2EFE8;
+  --brand-soft:rgba(24,91,100,.08);
+  --band:#185B64;
+  --band-2:#124A51;
+  --band-fg:#F2EFE8;
+  --band-muted:rgba(242,239,232,.72);
+  --flavor:#725044;
+  --overlay:rgba(12,30,32,.45);
+  --shadow:0 30px 60px -30px rgba(18,60,64,.45);
+  --display:"Libre Caslon Display","Libre Caslon Text",Georgia,"Times New Roman",serif;
+  --serif:"Libre Caslon Text",Georgia,"Times New Roman",serif;
+  --sans:"Jost","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --gutter:max(16px,env(safe-area-inset-left,0px));
+  --gutter-r:max(16px,env(safe-area-inset-right,0px));
+  --max:1240px;
+  --header-h:68px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1F21;--surface:#14292C;--card:#1A3336;--fg:#ECE8DF;--muted:#9DB1AF;
+    --line:rgba(236,232,223,.14);--brand:#7CC3BC;--brand-ink:#0F1F21;--brand-soft:rgba(124,195,188,.1);
+    --band:#185B64;--band-2:#124A51;--band-fg:#F2EFE8;--band-muted:rgba(242,239,232,.72);
+    --flavor:#D3A691;--overlay:rgba(0,0,0,.6);--shadow:0 30px 60px -30px rgba(0,0,0,.7);color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1F21;--surface:#14292C;--card:#1A3336;--fg:#ECE8DF;--muted:#9DB1AF;
+  --line:rgba(236,232,223,.14);--brand:#7CC3BC;--brand-ink:#0F1F21;--brand-soft:rgba(124,195,188,.1);
+  --band:#185B64;--band-2:#124A51;--band-fg:#F2EFE8;--band-muted:rgba(242,239,232,.72);
+  --flavor:#D3A691;--overlay:rgba(0,0,0,.6);--shadow:0 30px 60px -30px rgba(0,0,0,.7);color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 12px)}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.06;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2.5px solid var(--brand);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter-r)}
+.eyebrow{font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--brand)}
+h1,h2,h3{font-weight:400;margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-size:clamp(2.2rem,4.6vw,3.9rem);line-height:1.02;letter-spacing:-.01em}
+h3{font-family:var(--serif);font-size:1.45rem;line-height:1.2}
+p{margin:0}
+.lede{font-size:1.12rem;color:var(--muted);max-width:56ch}
+.logo{display:block;fill:currentColor}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:50px;padding:0 1.5em;border-radius:999px;border:1.5px solid transparent;font-weight:500;font-size:1rem;text-decoration:none;transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--brand);color:var(--brand-ink)}
+.btn-primary:hover{background:var(--fg);color:var(--bg)}
+.btn-ghost{border-color:currentColor;background:transparent}
+.btn-ghost:hover{background:var(--brand-soft)}
+.btn-light{background:var(--band-fg);color:#185B64}
+.btn-light:hover{background:var(--lima)}
+.btn .arr{transition:transform .25s}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:24px;height:var(--header-h)}
+.top .brand{color:var(--brand);width:92px;flex:none}
+.nav{display:flex;gap:28px;margin-left:auto}
+.nav a{text-decoration:none;font-size:.98rem;position:relative;padding:6px 0}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:var(--brand);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.nav a:hover::after{transform:scaleX(1)}
+.top-actions{display:flex;align-items:center;gap:10px}
+.btn-sub{min-height:40px;padding:0 1.1em;font-size:.93rem}
+.cart-btn{position:relative;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:transparent;display:grid;place-items:center}
+.cart-btn:hover{border-color:var(--brand)}
+.cart-btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6}
+.cart-count{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:var(--brand);color:var(--brand-ink);font-size:.72rem;font-weight:600;display:grid;place-items:center;font-variant-numeric:tabular-nums;transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.cart-count.bump{transform:scale(1.35)}
+.menu-btn{display:none;width:44px;height:44px;border:0;background:transparent;padding:0}
+.menu-btn span{display:block;width:22px;height:1.6px;background:currentColor;margin:5px auto;transition:transform .3s}
+@media (max-width:900px){
+  .nav,.top .btn-sub{display:none}
+  .menu-btn{display:block}
+  .top-actions{margin-left:auto}
+}
+.mnav{position:fixed;inset:0;z-index:70;background:var(--band);color:var(--band-fg);padding:calc(env(safe-area-inset-top,0px) + 24px) var(--gutter-r) 32px var(--gutter);display:flex;flex-direction:column;gap:8px}
+.mnav-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+.mnav-head .logo{width:96px;color:var(--band-fg)}
+.mnav a{font-family:var(--display);font-size:2.4rem;text-decoration:none;padding:6px 0;border-bottom:1px solid rgba(242,239,232,.15)}
+.mnav .btn{margin-top:24px;align-self:flex-start}
+.x-btn{width:44px;height:44px;border-radius:50%;border:1.5px solid currentColor;background:transparent;font-size:1.3rem;line-height:1}
+
+/* Hero */
+.hero{position:relative;padding-block:clamp(36px,6vw,80px) clamp(48px,7vw,96px);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,4vw,64px);align-items:center}
+.hero-copy{display:flex;flex-direction:column;gap:26px;min-width:0}
+.hero h1{font-family:var(--display);font-size:clamp(3.3rem,8.2vw,7.4rem);line-height:.9;letter-spacing:-.02em;color:var(--brand)}
+.hero h1 em{font-family:var(--serif);font-style:italic;color:var(--flavor);font-size:.86em;display:block;margin-top:.08em}
+.hero .lede{font-size:1.18rem}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.specs{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--line);padding-top:18px;margin-top:6px}
+.spec{padding-right:22px;margin-right:22px;border-right:1px solid var(--line);display:flex;flex-direction:column}
+.spec:last-child{border:0}
+.spec b{font-family:var(--serif);font-weight:400;font-size:1.65rem;color:var(--brand);line-height:1;font-variant-numeric:tabular-nums}
+.spec span{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.hero-art{position:relative;aspect-ratio:1/1;width:100%;max-width:100%;min-width:0}
+.arch{position:absolute;left:21%;right:21%;top:9%;bottom:16%;border-radius:999px 999px 24px 24px;background:var(--band);overflow:hidden}
+.arch::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(90deg,var(--lima),#E9B44C 60%,#E07B39)}
+.ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 38s linear infinite}
+.ring text{font-family:var(--sans);font-size:15.5px;letter-spacing:.42em;font-weight:500;fill:var(--brand);text-transform:uppercase}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-bar{position:absolute;left:4%;bottom:11%;width:92%;height:auto;transform:rotate(-8deg);filter:drop-shadow(0 34px 34px rgba(8,40,44,.35));animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:rotate(-6deg) translateY(-10px)}}
+.arch-logo{position:absolute;top:15%;left:50%;transform:translateX(-50%);width:64%;color:var(--band-fg);opacity:.95}
+.arch-tag{position:absolute;top:33%;left:0;right:0;text-align:center;color:var(--band-fg);font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1.6vw,1.25rem)}
+.stamp{position:absolute;right:6%;top:10%;width:92px;height:92px;border-radius:50%;background:var(--lima);color:#15292B;display:grid;place-items:center;text-align:center;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;line-height:1.25;transform:rotate(12deg);box-shadow:var(--shadow)}
+.stamp b{display:block;font-family:var(--serif);font-weight:400;font-size:1.5rem;letter-spacing:0;text-transform:none}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-art{max-width:520px;width:100%;margin:0 auto;order:-1}
+}
+
+/* Marquee */
+.marquee{background:var(--band);color:var(--band-fg);overflow:hidden;border-block:1px solid var(--band-2)}
+.marquee-track{display:flex;width:max-content;animation:slide 40s linear infinite;padding-block:18px}
+.marquee span{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.4vw,1.9rem);white-space:nowrap;padding:0 .6em;display:flex;align-items:center;gap:1.2em}
+.marquee span::after{content:"";width:12px;height:12px;border-radius:50%;border:1.5px solid var(--lima)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* Bite (scroll moment) */
+.bite{position:relative}
+.bite-track{height:230vh}
+.bite-sticky{position:sticky;top:calc(var(--header-h) + env(safe-area-inset-top,0px));min-height:calc(100vh - var(--header-h));display:flex;align-items:center;padding-block:32px}
+.bite .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(24px,5vw,72px);align-items:center;width:100%}
+.stage{position:relative;aspect-ratio:1087/555;width:100%;max-width:100%}
+.stage canvas{position:absolute;left:9%;top:12%;width:82%;height:76%;transform:scale(var(--bs,.9));transition:transform .1s linear}
+.half{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;will-change:transform}
+.stage::before{content:"";position:absolute;left:12%;right:12%;bottom:2%;height:12%;border-radius:50%;background:radial-gradient(closest-side,rgba(8,40,44,.28),transparent)}
+.half.l{clip-path:polygon(0 0,50% 0,48.6% 9%,51.2% 18%,48.8% 27%,51.4% 37%,48.5% 47%,51.1% 57%,48.7% 66%,51.3% 76%,48.9% 86%,50.6% 94%,49.5% 100%,0 100%)}
+.half.r{clip-path:polygon(50% 0,100% 0,100% 100%,49.5% 100%,50.6% 94%,48.9% 86%,51.3% 76%,48.7% 66%,51.1% 57%,48.5% 47%,51.4% 37%,48.8% 27%,51.2% 18%,48.6% 9%)}
+.bite-copy{display:flex;flex-direction:column;gap:22px;min-width:0;position:relative;z-index:2}
+.senses{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column}
+.senses li{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;padding:16px 0;border-top:1px solid var(--line);opacity:var(--o,.45);transition:opacity .35s}
+.senses li:last-child{border-bottom:1px solid var(--line)}
+.senses b{font-family:var(--serif);font-weight:400;font-size:1.3rem;grid-column:2}
+.senses small{grid-column:2;color:var(--muted);font-size:.95rem}
+.senses i{grid-row:1/3;width:10px;height:10px;border-radius:50%;background:var(--flavor);margin-top:.6em;font-style:normal}
+.hint{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px}
+.hint::before{content:"";width:28px;height:1px;background:currentColor}
+@media (max-width:900px){
+  .bite-track{height:200vh}
+  .bite .wrap{grid-template-columns:1fr;gap:18px}
+  .bite h2{font-size:clamp(1.9rem,8vw,2.6rem)}
+  .senses li{padding:10px 0}
+  .senses small{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .bite-track{height:auto}
+  .bite-sticky{position:static;min-height:0;padding-block:72px}
+  .ring,.hero-bar,.marquee-track,.cycle-spin{animation:none!important}
+}
+
+/* Composition */
+.section{padding-block:clamp(72px,10vw,140px)}
+.comp-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);align-items:end;margin-bottom:56px}
+.comp-head > *{min-width:0}
+.numbers{display:grid;grid-template-columns:repeat(3,1fr);border-top:1.5px solid var(--fg)}
+.num{padding:28px 24px 30px 0;display:flex;flex-direction:column;gap:12px;min-width:0}
+.num + .num{padding-left:24px;border-left:1px solid var(--line)}
+.num .big{font-family:var(--display);font-size:clamp(4.2rem,9vw,7.6rem);line-height:.85;color:var(--brand);font-variant-numeric:tabular-nums}
+.num .big sup{font-family:var(--sans);font-size:.26em;letter-spacing:.06em;vertical-align:top;margin-left:.15em;position:relative;top:.4em}
+.num .lbl{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+.num p{color:var(--muted);font-size:.98rem;max-width:34ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.88rem;background:var(--surface)}
+.vs{margin-top:72px;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,5vw,64px);align-items:start}
+.vs > *{min-width:0}
+.vs-table-wrap{overflow-x:auto;border-radius:22px;background:var(--surface);border:1px solid var(--line)}
+.vs table{width:100%;border-collapse:collapse;min-width:520px}
+.vs th,.vs td{text-align:left;padding:16px 20px;vertical-align:top;font-size:.97rem}
+.vs thead th{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--muted);border-bottom:1px solid var(--line)}
+.vs thead th.us{color:var(--brand)}
+.vs tbody th{font-weight:500;width:26%}
+.vs tbody tr + tr > *{border-top:1px solid var(--line)}
+.vs td.us{color:var(--fg);background:var(--brand-soft);font-weight:500}
+.vs td.them{color:var(--muted)}
+.vs td.us::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--brand);margin-right:10px;vertical-align:.1em}
+.footnote{font-size:.82rem;color:var(--muted);margin-top:18px}
+@media (max-width:900px){
+  .comp-head,.vs{grid-template-columns:1fr}
+  .numbers{grid-template-columns:1fr}
+  .num + .num{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+}
+
+/* Occasions */
+.occ{background:var(--card);padding-block:clamp(72px,9vw,120px);overflow:hidden}
+.occ-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.occ-head > div{min-width:0;max-width:640px;display:flex;flex-direction:column;gap:16px}
+.occ-head > .arrows{display:flex;flex-direction:row;gap:8px}
+.arrows button{width:50px;height:50px;border-radius:50%;border:1.5px solid var(--fg);background:transparent;font-size:1.2rem}
+.arrows button:hover{background:var(--fg);color:var(--bg)}
+.rail{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-left:max(var(--gutter),calc((100vw - var(--max))/2 + 16px));padding-right:var(--gutter-r);padding-bottom:14px;scrollbar-width:none;cursor:grab}
+.rail::-webkit-scrollbar{display:none}
+.rail.drag{cursor:grabbing;scroll-snap-type:none}
+.occ-card{flex:0 0 min(78vw,360px);scroll-snap-align:start;border-radius:26px;padding:28px;min-height:440px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;position:relative;overflow:hidden;user-select:none}
+.occ-card:nth-child(1){background:var(--surface)}
+.occ-card:nth-child(2){background:var(--band);color:var(--band-fg)}
+.occ-card:nth-child(3){background:#2F4A3A;color:#EEF1E6}
+.occ-card:nth-child(4){background:#725044;color:#F6EDE6}
+.occ-card:nth-child(5){background:var(--surface)}
+.occ-card .when{font-family:var(--display);font-size:4.4rem;line-height:.9}
+.occ-card .tag{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;opacity:.8}
+.occ-card h3{font-size:1.6rem}
+.occ-card p{opacity:.82;font-size:.98rem}
+.occ-card img{width:78%;margin:-6px 0 -10px auto;transform:rotate(-6deg);filter:drop-shadow(0 16px 18px rgba(0,0,0,.25));pointer-events:none}
+.occ-card:nth-child(even) img{transform:rotate(5deg)}
+
+/* Shop */
+.shop-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(28px,5vw,72px);align-items:start}
+.shop-grid > *{min-width:0}
+.gallery{position:sticky;top:calc(var(--header-h) + 24px);display:flex;flex-direction:column;gap:12px}
+.g-main{aspect-ratio:5/4;border-radius:28px;background:var(--card);display:grid;place-items:center;overflow:hidden;position:relative;max-width:100%}
+.g-main img{width:100%;height:100%;object-fit:contain;padding:8%;transition:opacity .35s,transform .5s}
+.g-main img.cover{object-fit:cover;padding:0}
+.g-main img.swap{opacity:0;transform:scale(.97)}
+.thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.thumbs button{aspect-ratio:1;border-radius:14px;border:1.5px solid transparent;background:var(--card);padding:6px;overflow:hidden}
+.thumbs button[aria-pressed="true"]{border-color:var(--brand)}
+.thumbs img{width:100%;height:100%;object-fit:contain}
+.thumbs img.cover{object-fit:cover;border-radius:9px}
+.pdp{display:flex;flex-direction:column;gap:22px}
+.pdp h2{font-size:clamp(2.4rem,4.4vw,3.6rem);color:var(--flavor)}
+.pdp .sub{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--brand)}
+.opts{display:flex;flex-direction:column;gap:12px;border:0;margin:0;padding:0}
+.opts legend{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin-bottom:10px;padding:0}
+.opt{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:4px 16px;align-items:center;padding:18px 20px;border-radius:20px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;transition:border-color .2s,background .2s}
+.opt:hover{border-color:var(--brand)}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt .dot{grid-row:1/3;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--muted);display:grid;place-items:center}
+.opt .dot::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--brand);transform:scale(0);transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+.opt:has(input:checked){border-color:var(--brand);background:var(--brand-soft)}
+.opt:has(input:checked) .dot{border-color:var(--brand)}
+.opt:has(input:checked) .dot::after{transform:scale(1)}
+.opt:has(input:focus-visible){outline:2.5px solid var(--brand);outline-offset:3px}
+.opt-name{font-family:var(--serif);font-size:1.18rem;grid-column:2;grid-row:1}
+.opt-desc{font-size:.9rem;color:var(--muted);grid-column:2;grid-row:2}
+@media (max-width:560px){.pdp .opt{grid-template-columns:auto 1fr}.pdp .opt-price{grid-column:2;grid-row:3;text-align:left;display:flex;gap:8px;align-items:baseline}.pdp .opt-price small{display:inline}}
+.opt-price{grid-column:3;grid-row:1/3;text-align:right;font-variant-numeric:tabular-nums;font-weight:500}
+.opt-price small{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
+.badge{display:inline-block;margin-left:8px;padding:2px 9px;border-radius:999px;background:var(--lima);color:#15292B;font-family:var(--sans);font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;vertical-align:.2em}
+.subcfg{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:18px;border-radius:20px;background:var(--card)}
+.subcfg label{display:flex;flex-direction:column;gap:6px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;min-width:0}
+.seg{display:flex;border-radius:999px;border:1.5px solid var(--line);overflow:hidden;background:var(--surface)}
+.seg button{flex:1;border:0;background:transparent;padding:10px 4px;font-size:.92rem;letter-spacing:0;text-transform:none;font-weight:500}
+.seg button[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink)}
+.buy-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.qty{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:999px;height:50px}
+.qty button{width:46px;height:100%;border:0;background:transparent;font-size:1.2rem}
+.qty output{min-width:28px;text-align:center;font-variant-numeric:tabular-nums;font-weight:500}
+.buy-row .btn-primary{flex:1;min-width:220px}
+.perks{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.9rem;color:var(--muted);list-style:none;padding:0;margin:0}
+.perks li{display:flex;align-items:center;gap:8px}
+.perks li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--brand)}
+.next{margin-top:clamp(64px,8vw,104px);display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,64px);align-items:center;border-radius:32px;background:var(--surface);border:1px solid var(--line);padding:clamp(20px,4vw,48px);overflow:hidden}
+.next > *{min-width:0}
+.next img{border-radius:22px;width:100%;max-height:520px;object-fit:cover;object-position:top}
+.flv{display:flex;flex-direction:column;margin:20px 0 24px}
+.flv li{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:1.2rem}
+.flv li span{font-family:var(--sans);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.notify[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+@media (max-width:900px){
+  .shop-grid,.next{grid-template-columns:1fr}
+  .gallery{position:static}
+  .subcfg{grid-template-columns:1fr}
+}
+
+/* Word of mouth */
+.wom{padding-block:clamp(72px,9vw,128px);border-top:1px solid var(--line)}
+.wom blockquote{margin:0 auto;max-width:980px;text-align:center;font-family:var(--display);font-size:clamp(1.9rem,4.2vw,3.5rem);line-height:1.12;color:var(--fg);text-wrap:balance}
+.wom blockquote em{color:var(--brand)}
+.wom .eyebrow{display:block;text-align:center;margin-bottom:26px}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+.slot{border:1.5px dashed var(--line);border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:14px;min-height:190px;min-width:0}
+.slot .stars{letter-spacing:.2em;color:var(--brand);font-size:1rem}
+.slot p{color:var(--muted);font-family:var(--serif);font-style:italic}
+.slot small{margin-top:auto;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.slot.cta{border-style:solid;background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.slot.cta p{color:inherit;font-style:normal;font-family:var(--serif);font-size:1.35rem;line-height:1.25}
+.slot.cta small{color:inherit;opacity:.8}
+@media (max-width:900px){.slots{grid-template-columns:1fr}}
+
+/* About band */
+.about{background:var(--band);color:var(--band-fg);padding-block:clamp(80px,10vw,150px);position:relative;overflow:hidden}
+.about .eyebrow{color:var(--lima)}
+.about h2{color:var(--band-fg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
+.about-grid > *{min-width:0}
+.about .lede{color:var(--band-muted)}
+.manifesto{font-family:var(--serif);font-size:clamp(1.15rem,1.6vw,1.3rem);line-height:1.6;color:var(--band-fg);display:flex;flex-direction:column;gap:1em;max-width:58ch;margin-top:28px}
+.manifesto strong{font-weight:400;font-style:italic;color:var(--lima)}
+.cycle{position:relative;aspect-ratio:1;max-width:520px;width:100%;margin:0 auto}
+.cycle svg{width:100%;height:100%;overflow:visible}
+.cycle-spin{transform-origin:260px 260px;animation:spin 60s linear infinite}
+.node-lbl{position:absolute;width:42%;font-size:.9rem;line-height:1.35;color:var(--band-fg)}
+.node-lbl b{display:block;font-family:var(--serif);font-weight:400;font-size:1.1rem;color:var(--lima);margin-bottom:2px}
+.n1{top:-2%;left:50%;transform:translateX(-50%);text-align:center}
+.n2{right:-6%;top:44%;text-align:left;width:30%}
+.n3{bottom:-4%;left:50%;transform:translateX(-50%);text-align:center}
+.n4{left:-6%;top:44%;text-align:right;width:30%}
+.cycle-center{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.cycle-center .logo{width:34%;color:var(--band-fg)}
+.cycle-list{display:none;margin:0;padding:0;list-style:none;counter-reset:c}
+.cycle-list li{counter-increment:c;display:grid;grid-template-columns:34px 1fr;gap:2px 10px;padding:12px 0;border-top:1px solid rgba(242,239,232,.2);font-size:.95rem;color:var(--band-muted)}
+.cycle-list li::before{content:counter(c);grid-row:1/3;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--lima);color:var(--lima);display:grid;place-items:center;font-size:.8rem;font-weight:600}
+.cycle-list b{font-family:var(--serif);font-weight:400;color:var(--band-fg);font-size:1.1rem}
+@media (max-width:640px){.node-lbl{display:none}.cycle{max-width:300px}.cycle-list{display:block}}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:clamp(64px,8vw,100px);border-top:1px solid rgba(242,239,232,.2)}
+.pillar{padding:28px 24px 0 0;display:flex;flex-direction:column;gap:10px;min-width:0}
+.pillar + .pillar{padding-left:24px;border-left:1px solid rgba(242,239,232,.2)}
+.pillar h3{font-size:1.3rem}
+.pillar p{color:var(--band-muted);font-size:.96rem}
+.pillar .k{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--lima);font-weight:600}
+@media (max-width:900px){
+  .about-grid{grid-template-columns:1fr}
+  .cycle{max-width:400px;margin-top:24px;margin-bottom:24px}
+  .n2{right:-2%}.n4{left:-2%}
+  .node-lbl{font-size:.78rem}
+  .node-lbl b{font-size:.95rem}
+  .pillars{grid-template-columns:1fr 1fr}
+  .pillar:nth-child(3){padding-left:0;border-left:0}
+  .pillar{padding-bottom:24px}
+}
+@media (max-width:520px){
+  .pillars{grid-template-columns:1fr}
+  .pillar + .pillar{padding-left:0;border-left:0;border-top:1px solid rgba(242,239,232,.2)}
+}
+
+/* Pros */
+.pros-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.pro{border-radius:26px;background:var(--surface);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.pro-img{aspect-ratio:16/10;background:var(--card);overflow:hidden;max-width:100%}
+.pro-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.pro:hover .pro-img img{transform:scale(1.04)}
+.pro-img.contain img{object-fit:contain;padding:6%}
+.pro-body{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.pro-body .k{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--brand)}
+.pro-body p{color:var(--muted);font-size:.97rem}
+.pro-body .btn{margin-top:auto;align-self:flex-start;min-height:44px}
+@media (max-width:900px){.pros-grid{grid-template-columns:1fr}}
+
+/* Blog */
+.blog{background:var(--card)}
+.blog-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.posts{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:18px}
+.post{border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:14px;min-height:300px;background:var(--surface);text-decoration:none;transition:transform .3s;min-width:0}
+.post:hover{transform:translateY(-4px)}
+.post:first-child{background:var(--band);color:var(--band-fg)}
+.post:first-child .meta{color:var(--band-muted)}
+.post .meta{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap}
+.post h3{font-family:var(--display);font-size:clamp(1.5rem,2.4vw,2.1rem);line-height:1.08}
+.post p{opacity:.8;font-size:.96rem}
+.post .soon{margin-top:auto;font-size:.82rem;font-weight:500;display:flex;align-items:center;gap:8px}
+@media (max-width:900px){.posts{grid-template-columns:1fr}.post{min-height:0}}
+
+/* Closing form */
+.close{padding-block:clamp(80px,10vw,140px);text-align:center;position:relative;overflow:hidden}
+.close .giant{width:min(1100px,96%);margin:0 auto;color:var(--brand);opacity:.09}
+.close-inner{position:relative;margin-top:calc(-1 * clamp(80px,14vw,190px));display:flex;flex-direction:column;align-items:center;gap:22px}
+.close h2{color:var(--brand)}
+.lead{display:flex;gap:10px;width:min(560px,100%);flex-wrap:wrap}
+.lead input{flex:1;min-width:200px;height:52px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);padding:0 22px;font:inherit}
+.lead input:focus{outline:none;border-color:var(--brand)}
+.lead-msg{min-height:1.5em;color:var(--brand);font-weight:500}
+
+/* Footer */
+footer{background:var(--band);color:var(--band-fg);padding-block:64px 40px}
+.foot{display:grid;grid-template-columns:1.2fr repeat(3,1fr);gap:32px}
+.foot > *{min-width:0}
+.foot .logo{width:140px;color:var(--band-fg)}
+.foot h4{margin:0 0 14px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--lima);font-weight:600}
+.foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.foot a{text-decoration:none;color:var(--band-muted)}
+.foot a:hover{color:var(--band-fg)}
+.foot-tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;margin-top:14px}
+.legal{margin-top:48px;padding-top:22px;border-top:1px solid rgba(242,239,232,.18);font-size:.8rem;color:var(--band-muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:900px){.foot{grid-template-columns:1fr 1fr}.foot > :first-child{grid-column:1/-1}}
+
+/* Drawer + modal */
+.scrim{position:fixed;inset:0;background:var(--overlay);z-index:80;opacity:0;transition:opacity .3s}
+.scrim.on{opacity:1}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100vw);background:var(--bg);z-index:90;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .45s cubic-bezier(.2,.8,.2,1);padding:calc(env(safe-area-inset-top,0px) + 22px) max(22px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 22px) 22px;box-shadow:-30px 0 60px -30px rgba(0,0,0,.4);visibility:hidden}
+.drawer.on{transform:none;visibility:visible}
+.d-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.d-head h3{font-family:var(--display);font-size:2rem}
+.ship{padding:16px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.bar{height:6px;border-radius:3px;background:var(--card);margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brand),var(--lima));border-radius:3px;transition:width .5s}
+.items{flex:1;overflow-y:auto;padding:8px 0;display:flex;flex-direction:column}
+.item{display:grid;grid-template-columns:76px 1fr auto;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);align-items:center}
+.item img{width:76px;height:60px;object-fit:contain;background:var(--card);border-radius:12px;padding:4px}
+.item .nm{font-family:var(--serif);font-size:1.05rem;line-height:1.25}
+.item .dt{font-size:.84rem;color:var(--muted)}
+.item .mini{display:flex;align-items:center;gap:4px;margin-top:6px}
+.item .mini button{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:transparent;font-size:.95rem;line-height:1}
+.item .mini output{min-width:22px;text-align:center;font-variant-numeric:tabular-nums}
+.item .pr{text-align:right;font-variant-numeric:tabular-nums;font-weight:500}
+.item .rm{display:block;margin-top:6px;border:0;background:none;color:var(--muted);font-size:.8rem;text-decoration:underline;padding:0;margin-left:auto}
+.empty{padding:48px 8px;text-align:center;color:var(--muted);display:flex;flex-direction:column;gap:16px;align-items:center}
+.empty .logo{width:90px;color:var(--brand);opacity:.35}
+.d-foot{padding-top:16px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:12px}
+.tot{display:flex;justify-content:space-between;font-size:1.05rem;font-variant-numeric:tabular-nums}
+.tot b{font-family:var(--serif);font-weight:400;font-size:1.5rem}
+.modal{position:fixed;inset:0;z-index:95;display:grid;place-items:center;padding:calc(env(safe-area-inset-top,0px) + 16px) var(--gutter-r) calc(env(safe-area-inset-bottom,0px) + 16px) var(--gutter)}
+.sheet{width:min(620px,100%);max-height:100%;overflow-y:auto;background:var(--bg);border-radius:28px;padding:clamp(20px,4vw,36px);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:22px;animation:rise .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes rise{from{transform:translateY(30px);opacity:0}}
+.steps{display:flex;gap:6px;list-style:none;margin:0;padding:0}
+.steps li{flex:1;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted);border-top:3px solid var(--card);padding-top:8px}
+.steps li.on{color:var(--brand);border-color:var(--brand)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{display:flex;flex-direction:column;gap:6px;font-size:.84rem;font-weight:500;min-width:0}
+.field.full{grid-column:1/-1}
+.field input{height:48px;border-radius:14px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);padding:0 14px;font:inherit;font-weight:400}
+.field input:focus{outline:none;border-color:var(--brand)}
+.pay{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pay .opt{grid-template-columns:auto 1fr}
+.note{font-size:.84rem;color:var(--muted);background:var(--card);border-radius:14px;padding:12px 16px}
+.sheet-actions{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.done{text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;padding-block:12px}
+.done .spinlogo{width:150px;color:var(--brand);animation:pop .8s cubic-bezier(.3,1.5,.5,1)}
+@keyframes pop{from{transform:rotate(-200deg) scale(.3);opacity:0}}
+.done h3{font-family:var(--display);font-size:2.4rem;color:var(--brand)}
+.summary{width:100%;font-size:.95rem;border-top:1px solid var(--line);padding-top:12px;display:flex;flex-direction:column;gap:6px;font-variant-numeric:tabular-nums}
+.summary div{display:flex;justify-content:space-between;gap:12px}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 22px);transform:translate(-50%,calc(100% + 40px));visibility:hidden;background:var(--fg);color:var(--bg);padding:12px 20px;border-radius:999px;z-index:99;font-size:.94rem;transition:transform .4s cubic-bezier(.2,.8,.2,1);max-width:calc(100vw - 32px)}
+.toast.on{transform:translate(-50%,0);visibility:visible}
+@media (max-width:520px){.fgrid,.pay{grid-template-columns:1fr}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="gira" viewBox="-1 0 1911 543"><g transform="matrix(1.3333333,0,0,-1.3333333,0,541.80667)"><path transform="translate(578.2542,307.379)" fill-rule="evenodd" d="m 0,0 c -1.858,2.559 -5.537,2.923 -8.03,0.977 -23.333,-18.215 -49.46,-31.261 -78.947,-32.776 -0.95,-0.048 -5.376,0.284 -5.712,0.198 -0.063,-90.318 -0.143,-180.619 -0.207,-270.937 31.09,0.016 94.599,-0.029 94.599,-0.029 V -5.308 c 0,0 -0.008,2.974 -1.703,5.308"/><path transform="translate(1231.1218,154.0987)" fill-rule="evenodd" d="m 0,0 c -27.404,-36.341 -70.001,-66.202 -116.62,-68.596 -15.035,-0.766 -30.771,0.686 -43.938,8.73 -11.363,6.958 -18.418,18.817 -17.46,32.399 1.66,23.094 38.575,78.683 51.055,101.761 10.343,19.152 21.356,38.096 32.687,56.706 6.177,10.118 11.347,20.891 17.524,31.042 5.091,8.379 10.007,22.041 16.806,28.696 C -34.538,136.346 -9.114,81.971 16.295,27.579 14.076,18.897 5.474,7.246 0,0 m 12.305,244.844 c -27.02,-0.176 -54.025,-0.351 -81.029,-0.527 -4.613,-7.038 -8.124,-12.929 -12.497,-20.111 -5.394,-8.858 -10.788,-17.859 -15.465,-27.116 -11.715,-23.174 -26.557,-44.8 -38.671,-67.782 -27.707,-52.508 -61.063,-102.096 -87.7,-155.195 -6.576,-13.103 -13.055,-28.872 -14.013,-43.683 -0.447,-6.99 -1.309,-15.034 0.096,-21.961 1.708,-8.41 3.83,-17.061 8.346,-24.482 12.768,-20.988 37.171,-33.181 61.032,-35.974 79.321,-9.305 132.707,37.714 167.564,104.506 6.032,11.571 11.81,24.084 16.215,36.373 2.043,5.666 4.118,15.274 7.501,19.711 24.483,-52.78 48.966,-105.544 73.464,-158.308 34.458,0.048 68.931,0.096 103.405,0.16 C 137.799,-17.476 75.044,112.775 12.305,244.844"/><path transform="translate(417.8397,103.2502)" fill-rule="evenodd" d="m 0,0 c -4.596,-32.798 -9.177,-65.596 -13.773,-98.393 16.55,-0.112 33.101,-0.224 49.651,-0.336 0.128,54.552 0.239,109.119 0.367,163.67 -54.344,0.112 -108.687,0.208 -163.031,0.319 -0.032,-14.22 -0.064,-28.424 -0.096,-42.629 43.81,6.368 87.62,12.752 131.415,19.12 -0.575,-4.532 -3.24,-8.666 -4.884,-12.959 -8.044,-20.924 -27.068,-38.097 -46.795,-47.8 -48.279,-23.749 -94.339,-16.296 -143.369,-0.543 -10.054,3.24 -20.205,8.539 -29.43,13.726 -13.087,7.325 -25.903,14.539 -38.368,23.014 -49.141,33.404 -135.053,117.274 -95.345,182.503 13.486,22.152 38.32,33.564 63.202,37.139 65.579,9.4 141.645,-34.682 187.658,-78.396 8.235,-7.82 15.784,-16.263 23.413,-24.61 3.735,-4.086 6.528,-9.401 10.869,-12.784 34.314,0.239 68.612,0.479 102.926,0.718 -0.447,8.092 -2.075,16.471 -4.325,24.323 -3.464,12.002 -7.023,23.445 -11.827,35.016 -10.613,25.616 -37.043,55.621 -58.972,72.171 -34.793,26.223 -81.747,47.019 -125.621,49.381 -34.234,1.835 -64.67,-1.868 -97.612,-11.364 -10.709,-3.08 -21.45,-7.852 -31.345,-12.943 -17.412,-8.954 -35.128,-18.865 -49.731,-32.208 -9.353,-8.538 -18.051,-17.237 -26.59,-26.589 -32.702,-35.782 -50.513,-90.94 -45.342,-138.916 1.58,-14.667 5.314,-28.297 9.384,-42.406 2.666,-9.241 6.927,-17.923 11.3,-26.446 19.711,-38.415 51.662,-67.399 89.089,-88.163 56.913,-31.568 137.83,-35.367 197.968,-11.124 24.051,9.688 43.618,22.137 64.223,37.666 12.576,9.48 23.461,21.961 33.356,34.122 C -7.517,-10.677 -4.341,-4.788 0,0"/><path transform="translate(579.9062,385.4302)" fill-rule="nonzero" d="M 0,0 C -0.208,6.332 -5.871,11.33 -12.406,10.996 -49.674,9.087 -88.411,-6.933 -95.995,-46.127 -97.087,-56.962 -101.738,-80.485 -87.973,-83.63 -34.297,-88.458 1.595,-48.643 0,0"/><path transform="translate(708.9204,177.9724)" fill-rule="nonzero" d="m 0,0 c -1.661,0.705 -3.255,1.559 -4.926,2.365 v 193.878 c 16.252,0 32.279,0.311 48.289,-0.06 42.853,-0.993 81.384,-12.789 109.585,-45.928 C 179.703,118.818 185.735,82.991 169.635,45.217 153.926,8.359 122.145,-7.726 83.115,-12.346 54.299,-15.757 26.573,-11.277 0,0 m 168.803,-29.673 c 21.818,6.186 42.634,14.538 61,28.49 67.704,51.433 56.382,154.503 -18.757,194.857 -36.639,19.677 -76.777,25.945 -118.214,26.13 -61.473,0.274 -122.948,0.072 -184.423,0.073 h -5.427 c -1.41,-6.195 -1.089,-389.775 0.182,-393.241 H -3.193 V -28.25 c 18.636,-5.808 36.72,-10.246 55.223,-12.935 4.43,-0.644 9.22,0.24 12.878,-3.954 36.379,-41.719 72.774,-86.723 109.174,-128.424 l 113.6,0.23 c -41.912,47.715 -82.975,94.463 -124.621,141.876 2.679,0.835 4.2,1.347 5.742,1.784"/></g></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="GIRA — início"><svg class="logo" viewBox="-1 0 1911 543"><use href="#gira"/></svg></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#produtos">Produtos</a>
+      <a href="#a-gira">A GIRA</a>
+      <a href="#profissionais">Para profissionais</a>
+      <a href="#blog">Blog</a>
+    </nav>
+    <div class="top-actions">
+      <a class="btn btn-primary btn-sub" href="#produtos" data-sub>Assinar</a>
+      <button class="cart-btn" id="cartBtn" aria-label="Abrir sacola">
+        <svg viewBox="0 0 24 24"><path d="M5 8h14l-1.2 11.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mnav" id="mnav" hidden>
+  <div class="mnav-head">
+    <svg class="logo" viewBox="-1 0 1911 543"><use href="#gira"/></svg>
+    <button class="x-btn" id="menuClose" aria-label="Fechar menu">×</button>
+  </div>
+  <a href="#produtos">Produtos</a>
+  <a href="#a-gira">A GIRA</a>
+  <a href="#profissionais">Para profissionais</a>
+  <a href="#blog">Blog</a>
+  <a class="btn btn-light" href="#produtos" data-sub>Assinar a GIRA</a>
+</div>
+
+<main id="inicio">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Brownie de Cacau · a primeira barra</span>
+        <h1>Gostoso<em>por inteiro.</em></h1>
+        <p class="lede">Uma pausa que dá gosto. Nossa primeira barra combina sabor de cacau, textura pensada para dar prazer e ingredientes escolhidos com cuidado.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#produtos">Quero experimentar <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="#a-gira">Conhecer a GIRA</a>
+        </div>
+        <div class="specs" aria-label="Destaques da barra">
+          <div class="spec"><b>10 g</b><span>proteína</span></div>
+          <div class="spec"><b>11 g</b><span>fibra</span></div>
+          <div class="spec"><b>50 g</b><span>a barra</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="arch">
+          <svg class="logo arch-logo" viewBox="-1 0 1911 543"><use href="#gira"/></svg>
+          <p class="arch-tag">Gostoso por inteiro.</p>
+        </div>
+        <svg class="ring" viewBox="0 0 500 500">
+          <defs><path id="circ" d="M250,250 m-232,0 a232,232 0 1,1 464,0 a232,232 0 1,1 -464,0"/></defs>
+          <text><textPath href="#circ">Gostoso por inteiro · Gostoso por inteiro · Gostoso por inteiro · Gostoso por inteiro · </textPath></text>
+        </svg>
+        <img class="hero-bar" src="bar-teal.webp" alt="" width="1087" height="555">
+        <div class="stamp"><span><b>novo</b>sabor<br>cacau</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>macia</span><span>densa como brownie</span><span>cacau na frente</span><span>fibra que importa</span><span>proteína na medida</span><span>cabe na bolsa</span><span>dá vontade de repetir</span>
+      <span>macia</span><span>densa como brownie</span><span>cacau na frente</span><span>fibra que importa</span><span>proteína na medida</span><span>cabe na bolsa</span><span>dá vontade de repetir</span>
+    </div>
+  </div>
+
+  <!-- A MORDIDA -->
+  <section class="bite" id="mordida" aria-labelledby="bite-h">
+    <div class="bite-track" id="biteTrack">
+      <div class="bite-sticky">
+        <div class="wrap">
+          <div class="stage" id="stage" aria-hidden="true">
+            <canvas id="brownie" width="900" height="460"></canvas>
+            <img class="half l" src="bar-teal.webp" alt="">
+            <img class="half r" src="bar-teal.webp" alt="">
+          </div>
+          <div class="bite-copy">
+            <span class="eyebrow">A mordida vem primeiro</span>
+            <h2 id="bite-h">Chocolate que dá vontade de repetir.</h2>
+            <ul class="senses" id="senses">
+              <li><i></i><b>Macia do começo ao fim</b><small>Textura que não resseca no caminho entre a prateleira e você.</small></li>
+              <li><i></i><b>Densa como um brownie</b><small>Mordida firme, que pede a próxima. Nada de barra quebradiça.</small></li>
+              <li><i></i><b>Cacau na frente</b><small>O sabor vem primeiro. O resto da história continua depois.</small></li>
+            </ul>
+            <span class="hint">role para abrir</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPOSIÇÃO -->
+  <section class="section" aria-labelledby="comp-h">
+    <div class="wrap">
+      <div class="comp-head">
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <span class="eyebrow">O que tem dentro</span>
+          <h2 id="comp-h">Dá para pensar na saúde e continuar pensando no chocolate.</h2>
+        </div>
+        <p class="lede">Complexidade no laboratório, simplicidade na sua mão. Equilibramos fibra e proteína sem sacrificar o que importa: a vontade de comer de novo.</p>
+      </div>
+      <div class="numbers">
+        <div class="num"><span class="big">11<sup>g</sup></span><span class="lbl">de fibra</span><p>A fibra é a protagonista silenciosa da barra. Ajuda a pausa a render até a próxima refeição.</p></div>
+        <div class="num"><span class="big">10<sup>g</sup></span><span class="lbl">de proteína</span><p>Equilibrada, sem corrida por recorde. A textura nunca piora para bater um número.</p></div>
+        <div class="num"><span class="big" style="font-size:clamp(3rem,6vw,5rem);line-height:1">Lista<br>curta</span><span class="lbl">ingredientes que você reconhece</span>
+          <div class="chips"><span class="chip">Cacau</span><span class="chip">Fibras vegetais</span><span class="chip">Proteína vegetal</span><span class="chip">Ingrediente circular</span></div>
+        </div>
+      </div>
+
+      <div class="vs">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <span class="eyebrow">Lado a lado</span>
+          <h3 style="font-family:var(--display);font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.05">Familiar na categoria. Diferente na mordida.</h3>
+          <p class="lede" style="font-size:1rem">Você já sabe o que é uma barrinha. A GIRA só escolheu outras prioridades.</p>
+        </div>
+        <div>
+          <div class="vs-table-wrap">
+            <table>
+              <thead><tr><th scope="col"><span class="sr">Critério</span></th><th scope="col" class="us">GIRA</th><th scope="col">Barra típica da categoria</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Textura</th><td class="us">Macia e densa</td><td class="them">Muitas vezes seca e dura</td></tr>
+                <tr><th scope="row">Proteína</th><td class="us">Na medida, junto com fibra</td><td class="them">Corrida por mais gramas</td></tr>
+                <tr><th scope="row">Ingredientes</th><td class="us">Lista curta e legível</td><td class="them">Lista longa, letras miúdas</td></tr>
+                <tr><th scope="row">Embalagem</th><td class="us">Limpa, sem gritar</td><td class="them">Selos e exclamações</td></tr>
+                <tr><th scope="row">Origem</th><td class="us">Aproveita ingrediente de cadeia circular</td><td class="them">Matéria-prima convencional</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="footnote">Valores por barra de 50 g, ilustrativos. A formulação final e a tabela nutricional estão em desenvolvimento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OCASIÕES -->
+  <section class="occ" aria-labelledby="occ-h">
+    <div class="wrap occ-head">
+      <div>
+        <span class="eyebrow">Onde ela cabe</span>
+        <h2 id="occ-h">Aquela pausa boa entre uma coisa e outra.</h2>
+      </div>
+      <div class="arrows"><button id="prev" aria-label="Ocasião anterior">←</button><button id="next" aria-label="Próxima ocasião">→</button></div>
+    </div>
+    <div class="rail" id="rail" tabindex="0" aria-label="Ocasiões de consumo, arraste para o lado">
+      <article class="occ-card"><span class="tag">Fome da tarde</span><span class="when">15h40</span><img src="bar-teal.webp" alt=""><div><h3>Uma pausa que valha a pena.</h3><p>Entre uma reunião e outra, um respiro com gosto de cacau.</p></div></article>
+      <article class="occ-card"><span class="tag">Na rotina</span><span class="when">Bolsa, mochila, carro.</span><img src="bar-plain.webp" alt=""><div><h3>Algo bom e confiável por perto.</h3><p>Pensada para ir junto. Sem cobertura que derrete no caminho.</p></div></article>
+      <article class="occ-card"><span class="tag">Ao ar livre</span><span class="when">Trilha, mar, rocha.</span><img src="bar-teal.webp" alt=""><div><h3>Para quem gosta de estar lá fora.</h3><p>Macia até no fim da trilha. Para quem cuida do lugar onde se diverte.</p></div></article>
+      <article class="occ-card"><span class="tag">Depois do movimento</span><span class="when">Yoga, pilates, remo.</span><img src="bar-cacau.webp" alt=""><div><h3>Uma recompensa que cabe no dia.</h3><p>Sem discurso de performance. Só o prazer de ter se mexido.</p></div></article>
+      <article class="occ-card"><span class="tag">Vontade de doce</span><span class="when">Agora.</span><img src="bar-plain.webp" alt=""><div><h3>Sabor sem abrir mão do cuidado.</h3><p>Acontece. A gente entende.</p></div></article>
+    </div>
+  </section>
+
+  <!-- COMPRAR -->
+  <section class="section" id="produtos" aria-labelledby="shop-h">
+    <div class="wrap">
+      <div class="shop-grid">
+        <div class="gallery">
+          <div class="g-main"><img id="gMain" src="bar-teal.webp" alt="Barra GIRA Brownie de Cacau, embalagem off-white com laterais azul-petróleo"></div>
+          <div class="thumbs" id="thumbs">
+            <button aria-pressed="true" data-src="bar-teal.webp" data-alt="Barra GIRA Brownie de Cacau, embalagem off-white com laterais azul-petróleo"><img src="bar-teal.webp" alt="Embalagem petróleo"></button>
+            <button aria-pressed="false" data-src="bar-cacau.webp" data-alt="Barra GIRA com laterais na cor cacau"><img src="bar-cacau.webp" alt="Embalagem cacau"></button>
+            <button aria-pressed="false" data-src="display.webp" data-alt="Display da GIRA com 12 barras"><img src="display.webp" alt="Caixa com 12"></button>
+            <button aria-pressed="false" data-src="mesa.webp" data-alt="Duas barras GIRA sobre uma mesa de madeira" data-cover><img class="cover" src="mesa.webp" alt="Barras na mesa"></button>
+            <button aria-pressed="false" data-src="display-b.webp" data-alt="Display GIRA visto de lado"><img src="display-b.webp" alt="Display de lado"></button>
+          </div>
+        </div>
+
+        <form class="pdp" id="buyForm">
+          <span class="sub">Barra de proteína natural · 50 g</span>
+          <h2 id="shop-h">Brownie de Cacau</h2>
+          <p class="lede" style="font-size:1.03rem">Macia, densa e com cacau na frente. Fibra relevante, proteína equilibrada e uma origem circular que acrescenta significado a cada mordida.</p>
+
+          <fieldset class="opts">
+            <legend>Escolha como quer a sua</legend>
+            <label class="opt"><input type="radio" name="plan" value="conhecer" id="plan-conhecer"><span class="dot"></span><span class="opt-name">Caixa para conhecer</span><span class="opt-price" id="p-conhecer"></span><span class="opt-desc">4 barras. A primeira vez com a GIRA.</span></label>
+            <label class="opt"><input type="radio" name="plan" value="perto" id="plan-perto" checked><span class="dot"></span><span class="opt-name">Caixa para ter por perto</span><span class="opt-price" id="p-perto"></span><span class="opt-desc">12 barras no display. Para casa, escritório ou mochila.</span></label>
+            <label class="opt"><input type="radio" name="plan" value="mes" id="plan-mes"><span class="dot"></span><span class="opt-name">GIRA todo mês <span class="badge">−15%</span></span><span class="opt-price" id="p-mes"></span><span class="opt-desc">Assinatura com frete grátis. Pause ou cancele quando quiser.</span></label>
+          </fieldset>
+
+          <div class="subcfg" id="subcfg" hidden>
+            <label>Barras por entrega
+              <div class="seg" id="segQty"><button type="button" data-v="8" aria-pressed="false">8</button><button type="button" data-v="12" aria-pressed="true">12</button><button type="button" data-v="24" aria-pressed="false">24</button></div>
+            </label>
+            <label>Frequência
+              <div class="seg" id="segFreq"><button type="button" data-v="mensal" aria-pressed="true">Todo mês</button><button type="button" data-v="quinzenal" aria-pressed="false">A cada 15 dias</button></div>
+            </label>
+          </div>
+
+          <div class="buy-row">
+            <div class="qty" id="qtyBox"><button type="button" id="qMinus" aria-label="Diminuir quantidade">−</button><output id="qVal" aria-live="polite">1</output><button type="button" id="qPlus" aria-label="Aumentar quantidade">+</button></div>
+            <button class="btn btn-primary" type="submit" id="addBtn">Adicionar à sacola · <span id="addPrice"></span></button>
+          </div>
+          <ul class="perks"><li>Frete grátis acima de R$ 99</li><li>Envio em até 2 dias úteis</li><li>Embalagem reciclável</li></ul>
+        </form>
+      </div>
+
+      <div class="next">
+        <img src="sabores.webp" alt="Caixas GIRA empilhadas com os sabores em estudo">
+        <div>
+          <span class="eyebrow">Na cozinha de testes</span>
+          <h2 style="margin-top:14px">Próximos sabores.</h2>
+          <ul class="flv">
+            <li>Chocolatíssimo <span>em estudo</span></li>
+            <li>Caramelo com sal <span>em estudo</span></li>
+            <li>Mocha <span>em estudo</span></li>
+            <li>Morango <span>em estudo</span></li>
+            <li>Cookie Dough <span>em estudo</span></li>
+          </ul>
+          <button class="btn btn-ghost notify" type="button" id="notify" aria-pressed="false">Quero saber quando chegar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOCA A BOCA -->
+  <section class="wom" aria-labelledby="wom-h">
+    <div class="wrap">
+      <span class="eyebrow" id="wom-h">O boca a boca que a gente quer merecer</span>
+      <blockquote>“Experimentei uma barra gostosa, macia e bem pensada. <em>E ainda descobri</em> que eles aproveitam um ingrediente de uma cadeia circular.”</blockquote>
+      <div class="slots">
+        <div class="slot"><span class="stars">○ ○ ○ ○ ○</span><p>As primeiras impressões do Kit de Descoberta entram aqui.</p><small>Espaço reservado · depoimento real</small></div>
+        <div class="slot"><span class="stars">○ ○ ○ ○ ○</span><p>Sabor, textura, a pausa em que ela coube. Do jeito que a pessoa contar.</p><small>Espaço reservado · depoimento real</small></div>
+        <div class="slot cta"><p>Provou o Kit de Descoberta? Conta pra gente o que achou.</p><a class="btn btn-light" href="#fim" style="align-self:flex-start;min-height:44px">Deixar minha opinião</a><small>Leva menos de 2 minutos</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A GIRA -->
+  <section class="about" id="a-gira" aria-labelledby="about-h">
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <span class="eyebrow">A GIRA</span>
+          <h2 id="about-h" style="margin-top:16px">Começamos por uma barra. A ideia vai além dela.</h2>
+          <div class="manifesto">
+            <p>A gente acredita que comer bem precisa dar gosto. Que prazer e cuidado cabem na mesma mordida. Que ciência pode fazer a diferença sem precisar virar aula.</p>
+            <p>E que um ingrediente pode ganhar uma nova vida quando alguém enxerga valor onde antes havia pouca atenção. A GIRA é uma plataforma de <strong>alimentos circulares</strong>: começamos pelos snacks. Não terminamos neles.</p>
+          </div>
+        </div>
+        <div class="cycle" aria-label="Como a GIRA funciona, em quatro etapas que se repetem">
+          <svg viewBox="0 0 520 520" aria-hidden="true">
+            <circle cx="260" cy="260" r="190" fill="none" stroke="rgba(242,239,232,.22)" stroke-width="1.2"/>
+            <g class="cycle-spin">
+              <circle cx="260" cy="260" r="190" fill="none" stroke="#AED35B" stroke-width="2.5" stroke-dasharray="1 14" stroke-linecap="round"/>
+              <path d="M260 70 A190 190 0 0 1 395 126" fill="none" stroke="#AED35B" stroke-width="3" stroke-linecap="round"/>
+              <path d="M391 120 l8 8 l-11 2" fill="none" stroke="#AED35B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <circle cx="260" cy="70" r="9" fill="#F2EFE8"/><circle cx="450" cy="260" r="9" fill="#F2EFE8"/>
+            <circle cx="260" cy="450" r="9" fill="#F2EFE8"/><circle cx="70" cy="260" r="9" fill="#F2EFE8"/>
+          </svg>
+          <div class="cycle-center"><svg class="logo" viewBox="-1 0 1911 543"><use href="#gira"/></svg></div>
+          <div class="node-lbl n1"><b>Enxergar</b>valor que já existe na indústria de alimentos</div>
+          <div class="node-lbl n2"><b>Transformar</b>em ingrediente seguro e estável</div>
+          <div class="node-lbl n3"><b>Criar</b>alimentos que dão vontade</div>
+          <div class="node-lbl n4"><b>Recomeçar</b>com novos ingredientes e categorias</div>
+        </div>
+        <ol class="cycle-list" aria-hidden="true">
+          <li><b>Enxergar</b>valor que já existe na indústria de alimentos</li>
+          <li><b>Transformar</b>em ingrediente seguro e estável</li>
+          <li><b>Criar</b>alimentos que dão vontade</li>
+          <li><b>Recomeçar</b>com novos ingredientes e categorias</li>
+        </ol>
+      </div>
+      <div class="pillars">
+        <div class="pillar"><span class="k">Primeiro</span><h3>Sabor</h3><p>Comer bem deve ser, antes de tudo, prazeroso.</p></div>
+        <div class="pillar"><span class="k">Junto</span><h3>Saúde com equilíbrio</h3><p>Ingredientes reconhecíveis, fórmula simples, sem modismos.</p></div>
+        <div class="pillar"><span class="k">Na prática</span><h3>Circularidade</h3><p>Aproveitar melhor os recursos e transformar potencial em valor.</p></div>
+        <div class="pillar"><span class="k">Sempre</span><h3>Ciência e transparência</h3><p>Inovar com responsabilidade. Comunicar com verdade.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFISSIONAIS -->
+  <section class="section" id="profissionais" aria-labelledby="pro-h">
+    <div class="wrap">
+      <div style="display:flex;flex-direction:column;gap:16px;max-width:720px">
+        <span class="eyebrow">Para profissionais</span>
+        <h2 id="pro-h">Vamos fazer a GIRA chegar mais longe juntos.</h2>
+      </div>
+      <div class="pros-grid">
+        <article class="pro">
+          <div class="pro-img"><img src="display-cena.webp" alt="Display GIRA com barras sobre balcão"></div>
+          <div class="pro-body"><span class="k">Revenda e varejo</span><h3>Um pequeno outdoor no seu balcão.</h3><p>Display com 12 barras, reconhecível de longe. Condições para mercados, empórios, cafés e academias.</p><button class="btn btn-ghost" type="button" data-contact="Revenda e varejo">Quero revender</button></div>
+        </article>
+        <article class="pro">
+          <div class="pro-img contain"><img src="bar-cacau.webp" alt="Barra GIRA"></div>
+          <div class="pro-body"><span class="k">Nutricionistas e prescritores</span><h3>Uma opção para indicar com tranquilidade.</h3><p>Ficha técnica, composição e amostras para conhecer a barra antes de recomendar.</p><button class="btn btn-ghost" type="button" data-contact="Nutricionistas e prescritores">Pedir material técnico</button></div>
+        </article>
+        <article class="pro">
+          <div class="pro-img"><img src="mesa.webp" alt="Duas barras GIRA na mesa"></div>
+          <div class="pro-body"><span class="k">Criadores e comunidades</span><h3>Gente boa em movimento.</h3><p>Trilha, surf, escalada, yoga. Se a sua comunidade gosta de estar lá fora, a gente quer conversar.</p><button class="btn btn-ghost" type="button" data-contact="Criadores e comunidades">Falar com a GIRA</button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="section blog" id="blog" aria-labelledby="blog-h">
+    <div class="wrap">
+      <div class="blog-head">
+        <div style="display:flex;flex-direction:column;gap:16px"><span class="eyebrow">Blog</span><h2 id="blog-h">Conversa boa sobre comida.</h2></div>
+      </div>
+      <div class="posts">
+        <a class="post" href="#blog"><span class="meta"><span>Composição</span><span>· 4 min</span></span><h3>Fibra: a parte do rótulo que pouca gente lê.</h3><p>Por que a gente decidiu olhar para a fibra com o mesmo carinho que o resto da categoria olha para a proteína.</p><span class="soon">Em breve →</span></a>
+        <a class="post" href="#blog"><span class="meta"><span>Bastidores</span><span>· 5 min</span></span><h3>Como chegamos à textura da primeira barra.</h3><p>Macia, densa e sem ressecar. O caminho até a mordida certa.</p><span class="soon">Em breve →</span></a>
+        <a class="post" href="#blog"><span class="meta"><span>Circularidade</span><span>· 3 min</span></span><h3>Alimento circular, sem complicar.</h3><p>O que significa dar nova vida a um ingrediente, explicado em poucas linhas.</p><span class="soon">Em breve →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FECHAMENTO -->
+  <section class="close" id="fim" aria-labelledby="close-h">
+    <div class="wrap">
+      <svg class="logo giant" viewBox="-1 0 1911 543" aria-hidden="true"><use href="#gira"/></svg>
+      <div class="close-inner">
+        <h2 id="close-h">Seja dos primeiros a provar.</h2>
+        <p class="lede">Novidades, sabores novos e convites para provar antes de todo mundo. Pouca mensagem, só quando valer a pena.</p>
+        <form class="lead" id="leadForm" novalidate>
+          <label for="leadEmail" class="sr">Seu e-mail</label>
+          <input id="leadEmail" type="email" placeholder="seu@email.com" autocomplete="email" required>
+          <button class="btn btn-primary" type="submit">Quero receber</button>
+        </form>
+        <p class="lead-msg" id="leadMsg" aria-live="polite"></p>
+        <a class="btn btn-ghost" href="#produtos">Ou experimente agora <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><svg class="logo" viewBox="-1 0 1911 543"><use href="#gira"/></svg><p class="foot-tag">Gostoso por inteiro.</p></div>
+      <div><h4>Loja</h4><ul><li><a href="#produtos">Brownie de Cacau</a></li><li><a href="#produtos" data-sub>GIRA todo mês</a></li><li><a href="#produtos">Próximos sabores</a></li></ul></div>
+      <div><h4>A GIRA</h4><ul><li><a href="#a-gira">Quem somos</a></li><li><a href="#a-gira">Alimentos circulares</a></li><li><a href="#blog">Blog</a></li></ul></div>
+      <div><h4>Contato</h4><ul><li><a href="#profissionais">Para profissionais</a></li><li><a href="#fim">Novidades</a></li><li><span style="color:var(--band-muted)">ola@gira.com.br</span></li></ul></div>
+    </div>
+    <div class="legal"><span>Protótipo de apresentação. Embalagens, valores nutricionais, preços e sabores são ilustrativos e não representam o produto final.</span><span>© 2026 GIRA</span></div>
+  </div>
+</footer>
+
+<!-- Sacola -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Sacola" aria-hidden="true">
+  <div class="d-head"><h3>Sua sacola</h3><button class="x-btn" id="drawerClose" aria-label="Fechar sacola">×</button></div>
+  <div class="ship" id="ship"><span id="shipTxt"></span><div class="bar"><i id="shipBar"></i></div></div>
+  <div class="items" id="items"></div>
+  <div class="d-foot" id="dFoot">
+    <div class="tot"><span>Subtotal</span><b id="subtotal">R$ 0,00</b></div>
+    <button class="btn btn-primary" id="checkoutBtn">Finalizar compra <span class="arr">→</span></button>
+    <button class="btn btn-ghost" id="keepBtn">Continuar escolhendo</button>
+  </div>
+</aside>
+
+<!-- Checkout -->
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="ck-title">
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+  const brl=v=>'R$ '+v.toFixed(2).replace('.',',').replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Plans ---------- */
+  const PLANS={
+    conhecer:{name:'Caixa para conhecer',img:'bar-teal.webp',price:()=>39.60,detail:()=>'4 barras · Brownie de Cacau',per:'R$ 9,90 por barra'},
+    perto:{name:'Caixa para ter por perto',img:'display.webp',price:()=>106.80,detail:()=>'12 barras · Brownie de Cacau',per:'R$ 8,90 por barra'},
+    mes:{name:'GIRA todo mês',img:'display-b.webp',sub:true,
+      price:()=>{const u=sub.qty>=24?7.40:7.57;return +(sub.qty*u).toFixed(2)},
+      detail:()=>sub.qty+' barras · '+(sub.freq==='mensal'?'todo mês':'a cada 15 dias'),per:'frete grátis'}
+  };
+  const sub={qty:12,freq:'mensal'};
+  let qty=1;
+  function plan(){return $('input[name=plan]:checked').value}
+  function refreshPrices(){
+    $('#p-conhecer').innerHTML=brl(PLANS.conhecer.price())+'<small>'+PLANS.conhecer.per+'</small>';
+    $('#p-perto').innerHTML=brl(PLANS.perto.price())+'<small>'+PLANS.perto.per+'</small>';
+    $('#p-mes').innerHTML=brl(PLANS.mes.price())+'<small>por entrega</small>';
+    const p=PLANS[plan()];
+    $('#subcfg').hidden=!p.sub;
+    $('#addPrice').textContent=brl(p.price()*qty);
+    $('#qVal').textContent=qty;
+  }
+  $$('input[name=plan]').forEach(r=>r.addEventListener('change',refreshPrices));
+  function seg(id,key,num){
+    $$(id+' button').forEach(b=>b.addEventListener('click',()=>{
+      $$(id+' button').forEach(x=>x.setAttribute('aria-pressed','false'));
+      b.setAttribute('aria-pressed','true');
+      sub[key]=num?+b.dataset.v:b.dataset.v;refreshPrices();
+    }));
+  }
+  seg('#segQty','qty',true);seg('#segFreq','freq',false);
+  $('#qMinus').onclick=()=>{qty=Math.max(1,qty-1);refreshPrices()};
+  $('#qPlus').onclick=()=>{qty=Math.min(20,qty+1);refreshPrices()};
+  $$('[data-sub]').forEach(a=>a.addEventListener('click',()=>{$('#plan-mes').checked=true;refreshPrices();closeMenu()}));
+
+  /* gallery */
+  $$('#thumbs button').forEach(b=>b.addEventListener('click',()=>{
+    $$('#thumbs button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');
+    const m=$('#gMain');m.classList.add('swap');
+    setTimeout(()=>{m.src=b.dataset.src;m.alt=b.dataset.alt;m.classList.toggle('cover',b.hasAttribute('data-cover'));m.classList.remove('swap')},reduce?0:220);
+  }));
+
+  /* ---------- Cart ---------- */
+  let cart=[];
+  try{cart=JSON.parse(localStorage.getItem('gira-cart')||'[]')}catch(e){cart=[]}
+  const save=()=>{try{localStorage.setItem('gira-cart',JSON.stringify(cart))}catch(e){}};
+  const FREE=99;
+  function total(){return cart.reduce((s,i)=>s+i.price*i.qty,0)}
+  function renderCart(){
+    const n=cart.reduce((s,i)=>s+i.qty,0);const c=$('#cartCount');
+    c.textContent=n;c.classList.add('bump');setTimeout(()=>c.classList.remove('bump'),300);
+    const t=total(),hasSub=cart.some(i=>i.sub);
+    const left=FREE-t;
+    $('#shipTxt').innerHTML=(hasSub||left<=0)?'<b>Frete grátis</b> garantido.':'Faltam <b>'+brl(left)+'</b> para o frete grátis.';
+    $('#shipBar').style.width=(hasSub?100:Math.min(100,t/FREE*100))+'%';
+    $('#subtotal').textContent=brl(t);
+    const box=$('#items');
+    if(!cart.length){
+      box.innerHTML='<div class="empty"><svg class="logo" viewBox="-1 0 1911 543"><use href="#gira"/></svg><p>Sua sacola está vazia. A primeira mordida começa com uma caixa para conhecer.</p><button class="btn btn-primary" id="emptyGo">Ver a barra</button></div>';
+      $('#emptyGo').onclick=()=>{closeDrawer();location.hash='produtos'};
+      $('#dFoot').hidden=true;$('#ship').hidden=true;return;
+    }
+    $('#dFoot').hidden=false;$('#ship').hidden=false;
+    box.innerHTML=cart.map((i,k)=>`<div class="item"><img src="${i.img}" alt=""><div><div class="nm">${i.name}</div><div class="dt">${i.detail}</div><div class="mini"><button aria-label="Diminuir" data-k="${k}" data-d="-1">−</button><output>${i.qty}</output><button aria-label="Aumentar" data-k="${k}" data-d="1">+</button></div></div><div class="pr">${brl(i.price*i.qty)}${i.sub?'<div class="dt">por entrega</div>':''}<button class="rm" data-rm="${k}">Remover</button></div></div>`).join('');
+    box.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{const it=cart[+b.dataset.k];it.qty=Math.max(1,Math.min(20,it.qty+ +b.dataset.d));save();renderCart()});
+    box.querySelectorAll('[data-rm]').forEach(b=>b.onclick=()=>{cart.splice(+b.dataset.rm,1);save();renderCart()});
+  }
+  $('#buyForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    const key=plan(),p=PLANS[key],detail=p.detail(),price=p.price();
+    const ex=cart.find(i=>i.key===key&&i.detail===detail);
+    if(ex)ex.qty=Math.min(20,ex.qty+qty);else cart.push({key,name:p.name,detail,price,qty,img:p.img,sub:!!p.sub});
+    save();renderCart();openDrawer();toast(p.name+' adicionada à sacola');
+  });
+  const scrim=$('#scrim'),drawer=$('#drawer');
+  function openDrawer(){scrim.hidden=false;requestAnimationFrame(()=>{scrim.classList.add('on');drawer.classList.add('on')});drawer.setAttribute('aria-hidden','false');setTimeout(()=>$('#drawerClose').focus(),300)}
+  function closeDrawer(){scrim.classList.remove('on');drawer.classList.remove('on');drawer.setAttribute('aria-hidden','true');setTimeout(()=>{if(!drawer.classList.contains('on')&&$('#modal').hidden)scrim.hidden=true},350)}
+  $('#cartBtn').onclick=openDrawer;$('#drawerClose').onclick=closeDrawer;$('#keepBtn').onclick=()=>{closeDrawer();location.hash='produtos'};
+  scrim.onclick=()=>{closeDrawer();closeModal()};
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeDrawer();closeModal();closeMenu()}});
+
+  /* ---------- Checkout (simulado) ---------- */
+  const ck={step:0,nome:'Ana Souza',cep:'01310-100',end:'Av. Paulista, 1000 · ap. 52',cidade:'São Paulo · SP',pay:'pix'};
+  const modal=$('#modal'),sheet=$('#sheet');
+  function steps(){return `<ol class="steps"><li class="${ck.step>=0?'on':''}">Entrega</li><li class="${ck.step>=1?'on':''}">Pagamento</li><li class="${ck.step>=2?'on':''}">Pronto</li></ol>`}
+  function renderCk(){
+    const t=total(),hasSub=cart.some(i=>i.sub),frete=(hasSub||t>=FREE)?0:14.9;
+    if(ck.step===0){
+      sheet.innerHTML=steps()+`<h3 id="ck-title" style="font-family:var(--display);font-size:2rem">Para onde vai a sua GIRA?</h3>
+      <form id="ckForm" class="fgrid">
+        <label class="field full">Nome<input id="ck-nome" value="${ck.nome}" autocomplete="name" required></label>
+        <label class="field">CEP<input id="ck-cep" value="${ck.cep}" inputmode="numeric" required></label>
+        <label class="field">Cidade<input id="ck-cidade" value="${ck.cidade}" required></label>
+        <label class="field full">Endereço<input id="ck-end" value="${ck.end}" required></label>
+        <p class="note full" style="grid-column:1/-1">Checkout de demonstração. Os dados acima são um exemplo e nada é enviado.</p>
+        <div class="sheet-actions" style="grid-column:1/-1"><button type="button" class="btn btn-ghost" id="ckCancel">Voltar à sacola</button><button class="btn btn-primary">Ir para pagamento <span class="arr">→</span></button></div>
+      </form>`;
+      $('#ckCancel').onclick=()=>{closeModal();openDrawer()};
+      $('#ckForm').onsubmit=e=>{e.preventDefault();['nome','cep','cidade','end'].forEach(k=>ck[k]=$('#ck-'+k).value);ck.step=1;renderCk()};
+    }else if(ck.step===1){
+      sheet.innerHTML=steps()+`<h3 id="ck-title" style="font-family:var(--display);font-size:2rem">Como prefere pagar?</h3>
+      <form id="ckPay" style="display:flex;flex-direction:column;gap:18px">
+        <div class="pay">
+          <label class="opt"><input type="radio" name="pay" id="pay-pix" value="pix" ${ck.pay==='pix'?'checked':''}><span class="dot"></span><span class="opt-name">Pix</span><span class="opt-desc">Aprovação na hora</span></label>
+          <label class="opt"><input type="radio" name="pay" id="pay-card" value="cartao" ${ck.pay==='cartao'?'checked':''}><span class="dot"></span><span class="opt-name">Cartão</span><span class="opt-desc">${hasSub?'Cobrança a cada entrega':'Em até 3x sem juros'}</span></label>
+        </div>
+        <div class="summary">${cart.map(i=>`<div><span>${i.qty}× ${i.name}</span><span>${brl(i.price*i.qty)}</span></div>`).join('')}<div><span>Frete</span><span>${frete?brl(frete):'Grátis'}</span></div><div style="font-weight:600"><span>Total</span><span>${brl(t+frete)}</span></div></div>
+        <p class="note">Nenhum pagamento é processado nesta demonstração.</p>
+        <div class="sheet-actions"><button type="button" class="btn btn-ghost" id="ckBack">← Entrega</button><button class="btn btn-primary">Confirmar pedido · ${brl(t+frete)}</button></div>
+      </form>`;
+      $('#ckBack').onclick=()=>{ck.step=0;renderCk()};
+      $('#ckPay').onsubmit=e=>{e.preventDefault();ck.pay=$('input[name=pay]:checked').value;ck.order='GR-'+String(Math.floor(10000+Math.random()*89999));ck.total=t+frete;ck.hasSub=hasSub;ck.step=2;renderCk()};
+    }else{
+      const first=ck.nome.split(' ')[0];
+      sheet.innerHTML=steps()+`<div class="done"><svg class="logo spinlogo" viewBox="-1 0 1911 543"><use href="#gira"/></svg>
+        <h3 id="ck-title">Obrigado, ${first}.</h3>
+        <p class="lede" style="text-align:center">Pedido <b>${ck.order}</b> confirmado. Sua GIRA sai em até 2 dias úteis para ${ck.cidade.split('·')[0].trim()}.${ck.hasSub?' A próxima entrega da assinatura já está agendada.':''}</p>
+        <div class="summary"><div><span>Total</span><span>${brl(ck.total)}</span></div><div><span>Pagamento</span><span>${ck.pay==='pix'?'Pix':'Cartão'}</span></div></div>
+        <p class="note">Pedido de demonstração. Nada foi cobrado nem enviado.</p>
+        <button class="btn btn-primary" id="ckDone">Voltar para a loja</button></div>`;
+      cart=[];save();renderCart();
+      $('#ckDone').onclick=closeModal;
+    }
+    sheet.scrollTop=0;
+  }
+  $('#checkoutBtn').onclick=()=>{ck.step=0;drawer.classList.remove('on');drawer.setAttribute('aria-hidden','true');modal.hidden=false;renderCk();setTimeout(()=>{const f=sheet.querySelector('input');f&&f.focus()},100)};
+  function closeModal(){if(modal.hidden)return;modal.hidden=true;scrim.classList.remove('on');setTimeout(()=>{if(!drawer.classList.contains('on'))scrim.hidden=true},350)}
+  modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+
+  /* ---------- Toast ---------- */
+  let tt;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),2600)}
+
+  /* ---------- Mobile menu ---------- */
+  const mnav=$('#mnav');
+  function closeMenu(){mnav.hidden=true;$('#menuBtn').setAttribute('aria-expanded','false')}
+  $('#menuBtn').onclick=()=>{mnav.hidden=false;$('#menuBtn').setAttribute('aria-expanded','true');$('#menuClose').focus()};
+  $('#menuClose').onclick=closeMenu;
+  mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+
+  /* ---------- Misc ---------- */
+  $('#notify').onclick=e=>{const b=e.currentTarget,on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);b.textContent=on?'Combinado, a gente avisa ✓':'Quero saber quando chegar';if(on)toast('Você será avisado dos próximos sabores')};
+  $$('[data-contact]').forEach(b=>b.onclick=()=>{toast('Recebemos seu interesse em '+b.dataset.contact+'. A gente volta em breve.')});
+  $('#leadForm').onsubmit=e=>{e.preventDefault();const v=$('#leadEmail').value.trim();const m=$('#leadMsg');
+    if(!/^\S+@\S+\.\S+$/.test(v)){m.textContent='Confere o e-mail? Parece que falta alguma parte.';return}
+    m.textContent='Pronto. Você está na lista de quem prova primeiro.';$('#leadEmail').value=''};
+
+  /* ---------- Occasions rail ---------- */
+  const rail=$('#rail');
+  const step=()=>rail.querySelector('.occ-card').offsetWidth+18;
+  $('#prev').onclick=()=>rail.scrollBy({left:-step(),behavior:'smooth'});
+  $('#next').onclick=()=>rail.scrollBy({left:step(),behavior:'smooth'});
+  let dn=false,sx=0,sl=0,moved=false;
+  rail.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;dn=true;moved=false;sx=e.clientX;sl=rail.scrollLeft;rail.classList.add('drag')});
+  addEventListener('pointermove',e=>{if(!dn)return;const d=e.clientX-sx;if(Math.abs(d)>3)moved=true;rail.scrollLeft=sl-d});
+  addEventListener('pointerup',()=>{if(!dn)return;dn=false;rail.classList.remove('drag')});
+
+  /* ---------- Brownie (canvas) ---------- */
+  const cv=$('#brownie'),cx=cv.getContext('2d');
+  function rnd(s){return function(){s=(s*16807)%2147483647;return (s-1)/2147483646}}
+  function drawBrownie(){
+    const W=cv.width,H=cv.height,r=rnd(7);cx.clearRect(0,0,W,H);
+    const x0=40,y0=70,w=W-80,h=H-130,rad=46;
+    // bite = union of circles at top-right corner
+    const bites=[[x0+w-40,y0+28,86],[x0+w-120,y0-6,64],[x0+w+6,y0+120,70]];
+    // side (depth)
+    cx.save();
+    cx.beginPath();cx.roundRect(x0,y0+26,w,h,rad);cx.fillStyle='#2B1710';cx.fill();
+    // top surface
+    const g=cx.createLinearGradient(0,y0,0,y0+h);g.addColorStop(0,'#6A3F2C');g.addColorStop(.55,'#4E2C1E');g.addColorStop(1,'#3A2016');
+    cx.beginPath();cx.roundRect(x0,y0,w,h,rad);cx.fillStyle=g;cx.fill();
+    // crackle
+    cx.clip();
+    for(let i=0;i<46;i++){const x=x0+r()*w,y=y0+r()*h*.9;cx.beginPath();cx.moveTo(x,y);let px=x,py=y;for(let k=0;k<5;k++){px+=(r()-.5)*70;py+=(r()-.5)*26;cx.lineTo(px,py)}cx.strokeStyle='rgba(160,110,80,'+(.12+r()*.2)+')';cx.lineWidth=1+r()*2;cx.stroke()}
+    for(let i=0;i<70;i++){const x=x0+r()*w,y=y0+r()*h,s=3+r()*9;cx.beginPath();cx.ellipse(x,y,s,s*.6,r()*3,0,7);cx.fillStyle=r()>.5?'rgba(30,14,8,.55)':'rgba(140,92,64,.35)';cx.fill()}
+    // grain
+    const id=cx.getImageData(0,0,W,H),d=id.data;for(let i=0;i<d.length;i+=4){if(d[i+3]){const n=(r()-.5)*26;d[i]+=n;d[i+1]+=n*.8;d[i+2]+=n*.6}}cx.putImageData(id,0,0);
+    // gloss
+    const gl=cx.createRadialGradient(x0+w*.3,y0+h*.2,10,x0+w*.3,y0+h*.2,w*.5);gl.addColorStop(0,'rgba(255,220,190,.16)');gl.addColorStop(1,'rgba(255,220,190,0)');cx.fillStyle=gl;cx.fillRect(x0,y0,w,h);
+    cx.restore();
+    // bite: carve out, then paint the exposed crumb rim
+    cx.save();cx.globalCompositeOperation='destination-out';
+    bites.forEach(([x,y,R])=>{cx.beginPath();for(let a=0;a<=Math.PI*2+.01;a+=.12){const rr=R+Math.sin(a*9)*3.5+(r()-.5)*3;cx.lineTo(x+Math.cos(a)*rr,y+Math.sin(a)*rr)}cx.fill()});
+    cx.restore();
+    cx.save();cx.globalCompositeOperation='source-atop';
+    bites.forEach(([x,y,R])=>{for(let k=0;k<60;k++){const a=r()*Math.PI*2,rr=R+4+r()*14;cx.beginPath();cx.arc(x+Math.cos(a)*rr,y+Math.sin(a)*rr,2+r()*5,0,7);cx.fillStyle=r()>.4?'rgba(42,22,14,.9)':'rgba(120,76,52,.7)';cx.fill()}});
+    cx.restore();
+    // crumbs on the floor
+    for(let i=0;i<26;i++){const x=x0+w*.55+r()*w*.5,y=y0+h+40+r()*24,s=2+r()*6;cx.beginPath();cx.ellipse(x,y,s,s*.7,r()*3,0,7);cx.fillStyle=r()>.5?'#3A2016':'#5A3424';cx.fill()}
+  }
+  if(cx.roundRect)drawBrownie();else{cx.fillStyle='#4E2C1E';cx.fillRect(40,70,820,330)}
+
+  /* ---------- Scroll: tear the wrapper ---------- */
+  const track=$('#biteTrack'),L=$('.half.l'),R=$('.half.r'),lis=$$('#senses li');
+  function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
+  function onScroll(){
+    if(reduce){apply(1);return}
+    const rct=track.getBoundingClientRect(),span=rct.height-innerHeight;
+    const p=Math.min(1,Math.max(0,(-rct.top+innerHeight*.15)/(span*.85)));
+    apply(p);
+  }
+  function apply(p){
+    const e=ease(p);
+    L.style.transform=`translate(${-e*46}%, ${e*8}%) rotate(${-e*14}deg)`;
+    R.style.transform=`translate(${e*46}%, ${-e*6}%) rotate(${e*11}deg)`;
+    L.style.opacity=R.style.opacity=String(1-Math.min(1,Math.max(0,(e-.45)/.4)));
+    cv.style.setProperty('--bs',(.86+e*.14).toFixed(3));
+    lis.forEach((li,i)=>li.style.setProperty('--o',p>=(i+1)*.24?1:.45));
+  }
+  let tick=false;addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(()=>{onScroll();tick=false})}},{passive:true});
+  addEventListener('resize',onScroll);onScroll();
+
+  refreshPrices();renderCart();
+})();
+</script>
+
+</body>
+</html>
